@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Public Space</title>
+</head>
+<body>
+    <h1>Public Space</h1>
+    <form id="post-form">
+        <textarea id="post-content" placeholder="Share something..."></textarea>
+        <button type="submit">Post</button>
+    </form>
+    <div id="posts"></div>
+    <script>
+        const abusiveWords = ['badword1', 'badword2'];
+
+        function filterAbusiveWords(content) {
+            abusiveWords.forEach(word => {
+                const regex = new RegExp(`\\b${word}\\b`, 'gi');
+                content = content.replace(regex, '****');
+            });
+            return content;
+        }
+
+        document.getElementById('post-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            let content = document.getElementById('post-content').value;
+            content = filterAbusiveWords(content);
+            const postDiv = document.createElement('div');
+            postDiv.innerText = content;
+            document.getElementById('posts').appendChild(postDiv);
+            document.getElementById('post-content').value = '';
+        });
+    </script>
+</body>
+</html>

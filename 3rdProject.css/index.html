@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reward System</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>Reward System</h2>
+  
+  <div class="question">
+    <h3>Question: How do you implement a reward system?</h3>
+    <button onclick="upvoteQuestion()">Upvote</button>
+    <span id="questionVotes">0</span> upvotes
+  </div>
+  
+  <div class="answer">
+    <h3>Answer: You can implement a reward system using points and badges.</h3>
+    <button onclick="upvoteAnswer()">Upvote</button>
+    <span id="answerVotes">0</span> upvotes
+  </div>
+  
+  <h3>Points: <span id="points">0</span></h3>
+  <h3>Badges: <span id="badges">0</span></h3>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
